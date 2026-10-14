@@ -115,7 +115,7 @@ services:
       dockerfile: apps/server/Dockerfile
     restart: unless-stopped
     platform: linux/amd64
-    image: hadesgod/folio-server
+    image: ratanon0191/folio-server
     networks: [default, document-worker-api]
     init: true
     depends_on:
@@ -187,7 +187,7 @@ services:
       dockerfile: apps/web/Dockerfile
       args:
         VITE_API_ORIGIN: ${PUBLIC_ORIGIN:?set PUBLIC_ORIGIN}
-    image: hadesgod/folio-web
+    image: ratanon0191/folio-web
     platform: linux/amd64
     restart: unless-stopped
     expose:
@@ -199,7 +199,7 @@ services:
       retries: 12
 
   web-assets:
-    image: hadesgod/folio-web
+    image: ratanon0191/folio-web
     platform: linux/amd64
     restart: unless-stopped
     depends_on:
